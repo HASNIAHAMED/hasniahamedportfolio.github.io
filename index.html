@@ -1,914 +1,1934 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Cloud & Network Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0a0f1e;
-    --bg2: #0f1628;
-    --bg3: #141d35;
-    --card: #111827;
-    --border: rgba(99,179,237,0.15);
-    --border2: rgba(99,179,237,0.3);
-    --accent: #63b3ed;
-    --accent2: #4299e1;
-    --accent3: #90cdf4;
-    --green: #68d391;
-    --amber: #f6ad55;
-    --text: #e2e8f0;
-    --muted: #718096;
-    --dim: #4a5568;
-    --font: 'Space Grotesk', sans-serif;
-    --mono: 'JetBrains Mono', monospace;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasni Ahamed — Creative Designer & Cloud Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ─────────────── RESET ─────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* ── Grid lines background ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(99,179,237,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99,179,237,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
+    :root {
+      --bg: #0a0800;
+      --bg2: #151008;
+      --bg3: #1f180a;
+      --card: rgba(25, 18, 4, 0.85);
+      --border: rgba(251, 191, 36, 0.15);
+      --border2: rgba(251, 191, 36, 0.35);
+      --accent: #fbbf24;
+      --accent2: #f59e0b;
+      --accent3: #fde68a;
+      --green: #34d399;
+      --pink: #f472b6;
+      --cyan: #22d3ee;
+      --text: #fffbf0;
+      --muted: #b8a580;
+      --dim: #7a6a4a;
+      --font: 'Space Grotesk', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --g1: linear-gradient(135deg, #f59e0b 0%, #fbbf24 40%, #fde68a 60%, #fbbf24 80%, #f59e0b 100%);
+      --g2: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+      --g3: linear-gradient(135deg, #f472b6 0%, #fbbf24 50%, #22d3ee 100%);
+      --g4: linear-gradient(135deg, #22d3ee 0%, #fbbf24 40%, #f472b6 70%, #fbbf24 100%);
+    }
 
-  /* ── Nav ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2.5rem;
-    background: rgba(10,15,30,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: var(--mono);
-    font-size: 14px;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-  }
-  .nav-links { display: flex; gap: 2rem; }
-  .nav-links a {
-    font-size: 13px;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--accent); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ── Hero ── */
-  .hero {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 8rem 2.5rem 4rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .hero-inner { max-width: 640px; }
-  .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--accent);
-  }
-  .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
-  }
-  .hero h1 span {
-    display: block;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent3) 50%, #b794f4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .hero-sub {
-    font-size: 1.1rem;
-    color: var(--muted);
-    margin: 1.5rem 0 2.5rem;
-    line-height: 1.8;
-    max-width: 520px;
-  }
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 2.5rem;
-  }
-  .badge {
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 5px 12px;
-    border-radius: 4px;
-    border: 1px solid var(--border2);
-    color: var(--accent3);
-    background: rgba(99,179,237,0.06);
-    letter-spacing: 0.05em;
-  }
-  .badge.green { border-color: rgba(104,211,145,0.3); color: var(--green); background: rgba(104,211,145,0.06); }
-  .badge.amber { border-color: rgba(246,173,85,0.3); color: var(--amber); background: rgba(246,173,85,0.06); }
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: none;
-  }
-  .btn-primary {
-    background: var(--accent2);
-    color: #fff;
-  }
-  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent;
-    color: var(--accent);
-    border: 1px solid var(--border2);
-  }
-  .btn-outline:hover { background: rgba(99,179,237,0.08); transform: translateY(-1px); }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
-  /* ── Floating terminal ── */
-  .hero-terminal {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 380px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 60px rgba(99,179,237,0.08);
-  }
-  .terminal-bar {
-    background: var(--bg3);
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .d-red { background: #fc5c5c; }
-  .d-amber { background: #fbbe57; }
-  .d-green { background: #37c040; }
-  .terminal-title { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: auto; margin-right: auto; }
-  .terminal-body { padding: 1.25rem; font-family: var(--mono); font-size: 12px; line-height: 2; }
-  .t-prompt { color: var(--accent); }
-  .t-cmd { color: var(--text); }
-  .t-out { color: var(--muted); padding-left: 12px; }
-  .t-out.green { color: var(--green); }
-  .t-out.amber { color: var(--amber); }
-  .t-cursor { display: inline-block; width: 8px; height: 14px; background: var(--accent); vertical-align: middle; animation: blink 1s step-end infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-  /* ── Sections ── */
-  section {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 2.5rem;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-  }
-  .section-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .section-line { flex: 1; height: 1px; background: var(--border); }
-  .section-title {
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-  }
-  .section-sub { color: var(--muted); font-size: 1rem; margin-bottom: 2.5rem; }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent2);
+      border-radius: 3px;
+    }
 
-  /* ── About ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .about-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.9; }
-  .about-text p:last-child { margin-bottom: 0; }
-  .about-text strong { color: var(--text); }
-  .about-stats { display: flex; flex-direction: column; gap: 1rem; }
-  .stat-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: border-color 0.2s;
-  }
-  .stat-card:hover { border-color: var(--border2); }
-  .stat-icon {
-    font-size: 24px;
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(99,179,237,0.1);
-    flex-shrink: 0;
-  }
-  .stat-num { font-size: 1.5rem; font-weight: 600; color: var(--accent); }
-  .stat-label { font-size: 13px; color: var(--muted); }
+    /* ═══════════════════════════════════════════
+       ANIMATED GRADIENT BACKGROUND — VIBRANT
+    ═══════════════════════════════════════════ */
+    .bg-wrap {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 90% 70% at 15% 10%, rgba(245, 158, 11, 0.30) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 85% 90%, rgba(244, 114, 182, 0.20) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 50% 50%, rgba(34, 211, 238, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 80% at 10% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 100% 80% at 90% 10%, rgba(253, 230, 138, 0.10) 0%, transparent 50%),
+        linear-gradient(160deg, #0a0800 0%, #1a1206 20%, #0f0a02 40%, #1a1208 60%, #0a0700 80%, #100c03 100%);
+      animation: bgShift 20s ease-in-out infinite alternate;
+    }
 
-  /* ── Skills ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  .skill-group {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.25rem;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .skill-group:hover { border-color: var(--border2); transform: translateY(-2px); }
-  .skill-group-title {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .skill-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--text);
-    padding: 4px 0;
-  }
-  .skill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-  .skill-dot.learning { background: var(--amber); }
-  .skill-level {
-    margin-left: auto;
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
+    @keyframes bgShift {
+      0% {
+        background:
+          radial-gradient(ellipse 90% 70% at 15% 10%, rgba(245, 158, 11, 0.30) 0%, transparent 60%),
+          radial-gradient(ellipse 80% 60% at 85% 90%, rgba(244, 114, 182, 0.20) 0%, transparent 55%),
+          radial-gradient(ellipse 70% 50% at 50% 50%, rgba(34, 211, 238, 0.12) 0%, transparent 60%),
+          radial-gradient(ellipse 100% 80% at 10% 80%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
+          radial-gradient(ellipse 100% 80% at 90% 10%, rgba(253, 230, 138, 0.10) 0%, transparent 50%),
+          linear-gradient(160deg, #0a0800 0%, #1a1206 20%, #0f0a02 40%, #1a1208 60%, #0a0700 80%, #100c03 100%);
+      }
+      25% {
+        background:
+          radial-gradient(ellipse 90% 70% at 30% 20%, rgba(244, 114, 182, 0.25) 0%, transparent 55%),
+          radial-gradient(ellipse 80% 60% at 70% 80%, rgba(251, 191, 36, 0.25) 0%, transparent 55%),
+          radial-gradient(ellipse 70% 50% at 40% 60%, rgba(34, 211, 238, 0.18) 0%, transparent 55%),
+          radial-gradient(ellipse 100% 80% at 20% 70%, rgba(245, 158, 11, 0.20) 0%, transparent 50%),
+          radial-gradient(ellipse 100% 80% at 80% 20%, rgba(253, 230, 138, 0.12) 0%, transparent 50%),
+          linear-gradient(160deg, #0f0a00 0%, #1a1208 25%, #120c02 45%, #1c1408 65%, #0c0800 85%, #120e03 100%);
+      }
+      50% {
+        background:
+          radial-gradient(ellipse 90% 70% at 60% 10%, rgba(34, 211, 238, 0.20) 0%, transparent 55%),
+          radial-gradient(ellipse 80% 60% at 40% 90%, rgba(251, 191, 36, 0.30) 0%, transparent 55%),
+          radial-gradient(ellipse 70% 50% at 70% 30%, rgba(244, 114, 182, 0.18) 0%, transparent 55%),
+          radial-gradient(ellipse 100% 80% at 30% 20%, rgba(245, 158, 11, 0.20) 0%, transparent 50%),
+          radial-gradient(ellipse 100% 80% at 70% 80%, rgba(253, 230, 138, 0.15) 0%, transparent 50%),
+          linear-gradient(160deg, #0a0600 0%, #181008 30%, #100a02 50%, #1a1208 70%, #0a0600 90%, #100c03 100%);
+      }
+      75% {
+        background:
+          radial-gradient(ellipse 90% 70% at 80% 30%, rgba(244, 114, 182, 0.25) 0%, transparent 55%),
+          radial-gradient(ellipse 80% 60% at 20% 70%, rgba(251, 191, 36, 0.25) 0%, transparent 55%),
+          radial-gradient(ellipse 70% 50% at 30% 40%, rgba(34, 211, 238, 0.15) 0%, transparent 55%),
+          radial-gradient(ellipse 100% 80% at 70% 10%, rgba(245, 158, 11, 0.18) 0%, transparent 50%),
+          radial-gradient(ellipse 100% 80% at 30% 90%, rgba(253, 230, 138, 0.12) 0%, transparent 50%),
+          linear-gradient(160deg, #0c0800 0%, #1c1408 20%, #120a02 45%, #1a1208 65%, #0a0600 80%, #120e03 100%);
+      }
+      100% {
+        background:
+          radial-gradient(ellipse 90% 70% at 10% 50%, rgba(251, 191, 36, 0.28) 0%, transparent 55%),
+          radial-gradient(ellipse 80% 60% at 90% 40%, rgba(244, 114, 182, 0.22) 0%, transparent 55%),
+          radial-gradient(ellipse 70% 50% at 60% 70%, rgba(34, 211, 238, 0.15) 0%, transparent 55%),
+          radial-gradient(ellipse 100% 80% at 10% 10%, rgba(245, 158, 11, 0.20) 0%, transparent 50%),
+          radial-gradient(ellipse 100% 80% at 90% 80%, rgba(253, 230, 138, 0.12) 0%, transparent 50%),
+          linear-gradient(160deg, #0a0800 0%, #1a1206 25%, #0f0a02 45%, #1a1208 65%, #0a0700 85%, #100c03 100%);
+      }
+    }
 
-  /* ── Projects ── */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-  .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: border-color 0.25s, transform 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-  .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent2), #b794f4);
-    opacity: 0;
-    transition: opacity 0.25s;
-  }
-  .project-card:hover { border-color: var(--border2); transform: translateY(-3px); }
-  .project-card:hover::before { opacity: 1; }
-  .project-card.coming-soon { opacity: 0.6; }
-  .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
-  .project-icon {
-    width: 44px; height: 44px;
-    border-radius: 10px;
-    background: rgba(99,179,237,0.1);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-  .project-status {
-    font-family: var(--mono);
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.08em;
-  }
-  .status-live { background: rgba(104,211,145,0.15); color: var(--green); border: 1px solid rgba(104,211,145,0.3); }
-  .status-wip { background: rgba(246,173,85,0.15); color: var(--amber); border: 1px solid rgba(246,173,85,0.3); }
-  .status-soon { background: rgba(99,179,237,0.1); color: var(--muted); border: 1px solid var(--border); }
-  .project-title { font-size: 1rem; font-weight: 600; color: var(--text); }
-  .project-desc { font-size: 13px; color: var(--muted); line-height: 1.7; flex: 1; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .project-tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 4px;
-    background: var(--bg3);
-    color: var(--dim);
-    border: 1px solid var(--border);
-    letter-spacing: 0.05em;
-  }
-  .project-links { display: flex; gap: 12px; }
-  .project-link {
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.2s;
-  }
-  .project-link:hover { color: var(--accent3); }
+    /* Floating orbs with more visibility */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      animation: orbFloat 16s ease-in-out infinite alternate;
+      opacity: 0.6;
+    }
 
-  /* ── Roadmap ── */
-  .roadmap { display: flex; flex-direction: column; gap: 0; }
-  .roadmap-item {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    position: relative;
-  }
-  .roadmap-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 19px;
-    top: 48px;
-    bottom: -16px;
-    width: 1px;
-    background: var(--border);
-  }
-  .roadmap-dot-wrap {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--border2);
-    background: var(--card);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 16px;
-    margin-top: 4px;
-  }
-  .roadmap-dot-wrap.done { border-color: var(--green); background: rgba(104,211,145,0.1); }
-  .roadmap-dot-wrap.active { border-color: var(--accent); background: rgba(99,179,237,0.1); animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(99,179,237,0.3)} 50%{box-shadow:0 0 0 8px rgba(99,179,237,0)} }
-  .roadmap-content {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.25rem 1.5rem;
-    flex: 1;
-    margin-bottom: 16px;
-  }
-  .roadmap-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
-  .roadmap-meta { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.05em; }
+    .orb1 {
+      width: 500px;
+      height: 500px;
+      top: -120px;
+      left: -100px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, rgba(251, 191, 36, 0.10) 50%, transparent 70%);
+      animation-duration: 18s;
+    }
+    .orb2 {
+      width: 450px;
+      height: 450px;
+      bottom: -100px;
+      right: -80px;
+      background: radial-gradient(circle, rgba(244, 114, 182, 0.30) 0%, rgba(244, 114, 182, 0.08) 50%, transparent 70%);
+      animation-duration: 20s;
+      animation-delay: -6s;
+    }
+    .orb3 {
+      width: 350px;
+      height: 350px;
+      top: 30%;
+      left: 50%;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.20) 0%, rgba(34, 211, 238, 0.06) 50%, transparent 70%);
+      animation-duration: 14s;
+      animation-delay: -3s;
+      transform: translateX(-50%);
+    }
+    .orb4 {
+      width: 280px;
+      height: 280px;
+      top: 15%;
+      right: 10%;
+      background: radial-gradient(circle, rgba(253, 230, 138, 0.22) 0%, rgba(251, 191, 36, 0.06) 50%, transparent 70%);
+      animation-duration: 22s;
+      animation-delay: -10s;
+    }
+    .orb5 {
+      width: 200px;
+      height: 200px;
+      bottom: 20%;
+      left: 5%;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 70%);
+      animation-duration: 12s;
+      animation-delay: -4s;
+    }
 
-  /* ── Certifications ── */
-  .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  .cert-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.25rem;
-    text-align: center;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .cert-card:hover { border-color: var(--border2); transform: translateY(-2px); }
-  .cert-card.upcoming { opacity: 0.5; }
-  .cert-logo { font-size: 2rem; margin-bottom: 0.75rem; }
-  .cert-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-  .cert-date { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+    @keyframes orbFloat {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      25% {
+        transform: translate(50px, -40px) scale(1.10);
+      }
+      50% {
+        transform: translate(-30px, 50px) scale(0.92);
+      }
+      75% {
+        transform: translate(40px, 30px) scale(1.06);
+      }
+      100% {
+        transform: translate(-20px, -30px) scale(0.98);
+      }
+    }
 
-  /* ── Contact ── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .contact-text h2 { font-size: 2rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1rem; }
-  .contact-text p { color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 14px;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .contact-link:hover { border-color: var(--border2); transform: translateX(4px); }
-  .contact-link-icon { font-size: 20px; width: 36px; text-align: center; flex-shrink: 0; }
-  .contact-link-label { font-size: 11px; color: var(--muted); font-family: var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-label { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; font-family: var(--mono); }
-  .form-input {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .form-input:focus { border-color: var(--accent2); }
-  textarea.form-input { min-height: 120px; resize: vertical; }
+    /* Grid overlay — subtle */
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(251, 191, 36, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(251, 191, 36, 0.04) 1px, transparent 1px);
+      background-size: 70px 70px;
+      opacity: 0.5;
+    }
 
-  /* ── Footer ── */
-  footer {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 2rem;
-    border-top: 1px solid var(--border);
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--dim);
-  }
-  footer span { color: var(--accent); }
+    /* Shimmer sweep */
+    .shimmer {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.05), rgba(253, 230, 138, 0.04), transparent);
+      animation: shimmerSweep 10s ease-in-out infinite;
+    }
 
-  /* ── Responsive ── */
-  @media (max-width: 900px) {
-    .hero-terminal { display: none; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  }
-  @media (max-width: 600px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { gap: 1.25rem; }
-    section { padding: 3rem 1.25rem; }
-    .hero { padding: 7rem 1.25rem 3rem; }
-  }
-</style>
+    @keyframes shimmerSweep {
+      0% {
+        left: -40%;
+      }
+      100% {
+        left: 110%;
+      }
+    }
+
+    /* ─────────────── NAV ─────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 2.5rem;
+      background: rgba(10, 8, 0, 0.75);
+      backdrop-filter: blur(24px) saturate(1.5);
+      border-bottom: 1px solid rgba(251, 191, 36, 0.08);
+      transition: background 0.3s;
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--g1);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .nav-hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .nav-hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ─────────────── HERO ─────────────── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2.5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 4rem;
+    }
+
+    .hero-left {
+      flex: 1;
+      max-width: 580px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border: 1px solid var(--border2);
+      border-radius: 40px;
+      background: rgba(251, 191, 36, 0.08);
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes dotPulse {
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 .name-gold {
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+      animation: shimmerText 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmerText {
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* ── THE FIX: Vibrant gradient for Designer & Engineer ── */
+    .hero h1 .role-line {
+      display: block;
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 500;
+      margin-top: 0.4rem;
+      background: var(--g4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 300% 300%;
+      animation: roleShimmer 5s ease-in-out infinite;
+      letter-spacing: 0.06em;
+      opacity: 0.95;
+    }
+
+    @keyframes roleShimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+      33% {
+        background-position: 50% 50%;
+      }
+      66% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Glow behind the role text */
+    .hero h1 .role-glow {
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin: 1.5rem 0 2rem;
+      line-height: 1.9;
+      max-width: 500px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      font-family: var(--font);
+    }
+
+    .btn-primary {
+      background: var(--g2);
+      color: #000;
+      box-shadow: 0 4px 30px rgba(245, 158, 11, 0.35);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 50px rgba(245, 158, 11, 0.5);
+    }
+
+    .btn-outline {
+      background: rgba(251, 191, 36, 0.06);
+      color: var(--text);
+      border: 1px solid var(--border2);
+    }
+
+    .btn-outline:hover {
+      background: rgba(251, 191, 36, 0.12);
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .s-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(251, 191, 36, 0.05);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      transition: all 0.3s;
+    }
+
+    .s-btn:hover {
+      transform: translateY(-4px);
+    }
+    .s-btn.wa:hover {
+      border-color: #25d366;
+      color: #25d366;
+      background: rgba(37, 211, 102, 0.10);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+    }
+    .s-btn.ig:hover {
+      border-color: #e4405f;
+      color: #e4405f;
+      background: rgba(228, 64, 95, 0.10);
+      box-shadow: 0 6px 20px rgba(228, 64, 95, 0.25);
+    }
+    .s-btn.li:hover {
+      border-color: #0a66c2;
+      color: #0a66c2;
+      background: rgba(10, 102, 194, 0.10);
+      box-shadow: 0 6px 20px rgba(10, 102, 194, 0.25);
+    }
+    .s-btn.em:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(251, 191, 36, 0.10);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.25);
+    }
+    .s-btn.gh:hover {
+      border-color: #e0e0e0;
+      color: #e0e0e0;
+      background: rgba(224, 224, 224, 0.08);
+      box-shadow: 0 6px 20px rgba(224, 224, 224, 0.15);
+    }
+
+    /* HERO PHOTO */
+    .hero-right {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .photo-ring-wrap {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    .photo-ring-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #f59e0b, #fbbf24, #fde68a, #f472b6, #22d3ee, #f59e0b);
+      animation: spinRing 5s linear infinite;
+      z-index: 0;
+    }
+
+    .photo-ring-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #f59e0b, #fbbf24, #fde68a, #f472b6, #22d3ee, #f59e0b);
+      filter: blur(18px);
+      opacity: 0.5;
+      animation: spinRing 5s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes spinRing {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .photo-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--bg);
+      background: var(--bg3);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: radial-gradient(circle at 40% 40%, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.05), transparent);
+    }
+
+    .photo-placeholder i {
+      font-size: 90px;
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.6;
+    }
+
+    .photo-placeholder span {
+      font-size: 11px;
+      color: var(--dim);
+      font-family: var(--mono);
+      letter-spacing: 0.1em;
+    }
+
+    .photo-tag {
+      text-align: center;
+    }
+
+    .photo-tag .pname {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .photo-tag .ptitle {
+      font-family: var(--mono);
+      font-size: 10px;
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.14em;
+      margin-top: 5px;
+    }
+
+    .photo-tag .ploc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ─────────────── SECTION SHARED ─────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.15), transparent);
+      position: relative;
+      z-index: 1;
+    }
+
+    section.sec {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+    }
+
+    .sec-hd {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .sec-lbl {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .sec-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .sec-title {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .sec-title .hl {
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+      animation: shimmerText 4s ease-in-out infinite;
+    }
+
+    .sec-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─────────────── SERVICES ─────────────── */
+    .srv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .srv-card {
+      background: linear-gradient(145deg, rgba(30, 24, 12, 0.92), rgba(20, 16, 6, 0.96));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      backdrop-filter: blur(4px);
+    }
+
+    .srv-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--g1);
+      opacity: 0;
+      transition: opacity 0.4s;
+      border-radius: 18px;
+    }
+
+    .srv-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border2);
+      box-shadow: 0 20px 60px rgba(245, 158, 11, 0.12);
+    }
+
+    .srv-card:hover::before {
+      opacity: 0.06;
+    }
+
+    .srv-card .ic {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .srv-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .srv-card p {
+      font-size: 13px;
+      color: var(--muted);
+      position: relative;
+      line-height: 1.7;
+    }
+
+    /* ─────────────── TECH ─────────────── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 1rem;
+    }
+
+    .tech-card {
+      background: linear-gradient(145deg, rgba(25, 20, 8, 0.92), rgba(18, 14, 4, 0.96));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.3s;
+      backdrop-filter: blur(4px);
+    }
+
+    .tech-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(245, 158, 11, 0.10);
+    }
+
+    .tech-card .ic {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .tech-card h4 {
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .tech-card .lv {
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--dim);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─────────────── PROJECTS ─────────────── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .proj-card {
+      background: linear-gradient(145deg, rgba(25, 20, 6, 0.95), rgba(16, 13, 2, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: all 0.4s;
+      backdrop-filter: blur(4px);
+    }
+
+    .proj-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border2);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(245, 158, 11, 0.08);
+    }
+
+    .proj-card .thumb {
+      width: 100%;
+      height: 200px;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-card .thumb .ov {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 8, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .proj-card:hover .thumb .ov {
+      opacity: 1;
+    }
+
+    .proj-card .thumb .ov span {
+      font-size: 13px;
+      color: var(--text);
+      border: 1px solid var(--border2);
+      padding: 6px 18px;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .proj-card .body {
+      padding: 1.5rem;
+    }
+
+    .proj-card .body .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 0.75rem;
+    }
+
+    .proj-card .body .tags span {
+      font-family: var(--mono);
+      font-size: 9px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(251, 191, 36, 0.08);
+      color: var(--dim);
+      border: 1px solid var(--border);
+      letter-spacing: 0.05em;
+    }
+
+    .proj-card .body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .proj-card .body p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .proj-card .body .cat {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ─────────────── ABOUT ─────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      line-height: 1.9;
+    }
+
+    .about-text strong {
+      color: var(--text);
+    }
+
+    .about-text .hl {
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(145deg, rgba(25, 20, 6, 0.95), rgba(16, 13, 2, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.3s;
+      backdrop-filter: blur(4px);
+    }
+
+    .stat-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(245, 158, 11, 0.10);
+    }
+
+    .stat-card .num {
+      font-size: 2rem;
+      font-weight: 700;
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-card .lbl {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─────────────── ROADMAP ─────────────── */
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rm-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .rm-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 48px;
+      bottom: -16px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .rm-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+      margin-top: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .rm-dot.done {
+      border-color: var(--green);
+      background: rgba(52, 211, 153, 0.12);
+    }
+
+    .rm-dot.now {
+      border-color: var(--accent);
+      background: rgba(251, 191, 36, 0.12);
+      animation: rmPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes rmPulse {
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(251, 191, 36, 0);
+      }
+    }
+
+    .rm-box {
+      background: linear-gradient(145deg, rgba(25, 20, 6, 0.95), rgba(16, 13, 2, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      flex: 1;
+      margin-bottom: 16px;
+      backdrop-filter: blur(4px);
+    }
+
+    .rm-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .rm-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─────────────── CONTACT ─────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-text h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .contact-text p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .clinks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .clink {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 1.25rem;
+      background: linear-gradient(145deg, rgba(25, 20, 6, 0.92), rgba(16, 13, 2, 0.96));
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.3s;
+      color: var(--text);
+      font-size: 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    .clink:hover {
+      border-color: var(--border2);
+      transform: translateX(6px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .clink .ic {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(251, 191, 36, 0.10);
+      font-size: 16px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .clink.wa:hover .ic {
+      background: rgba(37, 211, 102, 0.15);
+      color: #25d366;
+    }
+    .clink.ig:hover .ic {
+      background: rgba(228, 64, 95, 0.15);
+      color: #e4405f;
+    }
+    .clink.li:hover .ic {
+      background: rgba(10, 102, 194, 0.15);
+      color: #0a66c2;
+    }
+
+    .clink .lbl {
+      font-size: 10px;
+      color: var(--dim);
+      font-family: var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .clink .val {
+      font-size: 13px;
+    }
+
+    .clink .arr {
+      margin-left: auto;
+      color: var(--dim);
+      font-size: 12px;
+      transition: color 0.3s;
+    }
+
+    .clink:hover .arr {
+      color: var(--accent);
+    }
+
+    .sbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .sbar a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(251, 191, 36, 0.05);
+      color: var(--muted);
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+
+    .sbar a.wa:hover {
+      border-color: #25d366;
+      color: #25d366;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
+    }
+    .sbar a.ig:hover {
+      border-color: #e4405f;
+      color: #e4405f;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(228, 64, 95, 0.25);
+    }
+    .sbar a.li:hover {
+      border-color: #0a66c2;
+      color: #0a66c2;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(10, 102, 194, 0.25);
+    }
+    .sbar a.em:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(251, 191, 36, 0.25);
+    }
+    .sbar a.gh:hover {
+      border-color: #e0e0e0;
+      color: #e0e0e0;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(224, 224, 224, 0.15);
+    }
+
+    .cform {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .fg label {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .fg input,
+    .fg textarea {
+      background: rgba(25, 20, 6, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .fg input:focus,
+    .fg textarea:focus {
+      border-color: var(--accent2);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.08);
+    }
+
+    .fg textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* ─────────────── FOOTER ─────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--dim);
+    }
+
+    footer .fg-txt {
+      background: var(--g1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    footer .heart {
+      color: #f87171;
+      -webkit-text-fill-color: #f87171;
+    }
+
+    /* ─────────────── RESPONSIVE ─────────────── */
+    @media (max-width: 1024px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 7rem;
+      }
+      .hero-left {
+        max-width: 100%;
+      }
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-cta {
+        justify-content: center;
+      }
+      .hero-socials {
+        justify-content: center;
+      }
+      .photo-ring-wrap {
+        width: 240px;
+        height: 240px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 0.8rem 1.25rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(10, 8, 0, 0.97);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease;
+        border-left: 1px solid var(--border);
+        backdrop-filter: blur(20px);
+      }
+
+      .nav-links.open {
+        right: 0;
+      }
+
+      .nav-hamburger {
+        display: flex;
+        z-index: 101;
+      }
+
+      section.sec {
+        padding: 3rem 1.25rem;
+      }
+
+      .hero {
+        padding: 7rem 1.25rem 3rem;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .proj-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .srv-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-ring-wrap {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .srv-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Nav -->
-<nav>
-  <div class="nav-logo">~/portfolio</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- Hero -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Aspiring Cloud Engineer</div>
-    <h1>
-      Your Name<br>
-      <span>Building in the cloud</span>
-    </h1>
-    <p class="hero-sub">
-      HND graduate in Computer Networking, now pursuing a Top-Up degree and working toward cloud certification. 
-      Passionate about designing reliable, scalable network infrastructure.
-    </p>
-    <div class="hero-badges">
-      <span class="badge">HND Computer Networking</span>
-      <span class="badge green">AWS — Studying</span>
-      <span class="badge amber">Top-Up Degree — In Progress</span>
-    </div>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View my work →</a>
-      <a href="#contact" class="btn btn-outline">Get in touch</a>
-    </div>
+  <!-- ─── ANIMATED GRADIENT BACKGROUND ─── -->
+  <div class="bg-wrap">
+    <div class="grid-overlay"></div>
+    <div class="shimmer"></div>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="orb orb4"></div>
+    <div class="orb orb5"></div>
   </div>
 
-  <!-- Terminal -->
-  <div class="hero-terminal">
-    <div class="terminal-bar">
-      <div class="terminal-dot d-red"></div>
-      <div class="terminal-dot d-amber"></div>
-      <div class="terminal-dot d-green"></div>
-      <span class="terminal-title">bash — cloud-journey.sh</span>
+  <!-- ─── NAV ─── -->
+  <nav>
+    <div class="nav-logo">✦ hasni.ahamed</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#tech">Tech</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
-    <div class="terminal-body">
-      <div><span class="t-prompt">~$</span> <span class="t-cmd">whoami</span></div>
-      <div class="t-out green">aspiring-cloud-engineer</div>
-      <br>
-      <div><span class="t-prompt">~$</span> <span class="t-cmd">cat education.txt</span></div>
-      <div class="t-out">HND — Computer Networking ✓</div>
-      <div class="t-out">BSc Top-Up — In Progress 🔄</div>
-      <br>
-      <div><span class="t-prompt">~$</span> <span class="t-cmd">ls certifications/</span></div>
-      <div class="t-out amber">aws-practitioner/ [studying]</div>
-      <div class="t-out amber">network-plus/    [planned]</div>
-      <br>
-      <div><span class="t-prompt">~$</span> <span class="t-cmd">echo $GOAL</span></div>
-      <div class="t-out green">Cloud Engineer 🚀</div>
-      <br>
-      <div><span class="t-prompt">~$</span> <span class="t-cursor"></span></div>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
-  </div>
-</div>
+  </nav>
 
-<!-- About -->
-<section id="about">
-  <div class="section-header">
-    <span class="section-label">01 / About</span>
-    <div class="section-line"></div>
-  </div>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        I'm a <strong>Computer Networking graduate</strong> with an HND, now advancing my education through a Top-Up degree. My goal is to become a <strong>Cloud Engineer</strong> — designing and managing cloud infrastructure that businesses can rely on.
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="dot"></div>
+        Creative · Engineering · Cloud
+      </div>
+      <h1>
+        Hasni <span class="name-gold">Ahamed</span>
+        <span class="role-line">Designer &amp; Engineer</span>
+      </h1>
+      <p class="hero-sub">
+        I bridge <strong>artistic vision</strong> and <strong>technical precision</strong> — graphic design, photography, video editing, and cloud engineering. Based in Sri Lanka, working worldwide.
       </p>
-      <p>
-        Through my HND, I built a strong foundation in <strong>networking fundamentals</strong> — protocols, routing, switching, and network security. I'm now applying that knowledge to cloud platforms, learning how on-premise networking concepts translate into AWS and Azure environments.
-      </p>
-      <p>
-        I believe in <strong>learning in public</strong> — sharing my journey, documenting what I build, and growing alongside a community of engineers. This portfolio will grow as I grow.
-      </p>
-      <p>
-        <em style="color: var(--muted); font-size: 14px;">📍 [Your City, Country] · Open to remote and local opportunities</em>
-      </p>
-    </div>
-    <div class="about-stats">
-      <div class="stat-card">
-        <div class="stat-icon">🎓</div>
-        <div>
-          <div class="stat-num">HND</div>
-          <div class="stat-label">Computer Networking — Completed</div>
-        </div>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View my work</a>
+        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Let's talk</a>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon">☁️</div>
-        <div>
-          <div class="stat-num">AWS</div>
-          <div class="stat-label">Cloud Practitioner — Currently Studying</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">📡</div>
-        <div>
-          <div class="stat-num">TCP/IP</div>
-          <div class="stat-label">Networking Fundamentals — Strong Foundation</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🚀</div>
-        <div>
-          <div class="stat-num">Goal</div>
-          <div class="stat-label">Cloud Engineer — Targeting 2026</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-  <div class="section-header">
-    <span class="section-label">02 / Skills</span>
-    <div class="section-line"></div>
-  </div>
-  <p class="section-sub">Solid networking foundation · actively building cloud skills</p>
-  <div class="skills-grid">
-    <div class="skill-group">
-      <div class="skill-group-title">Networking</div>
-      <div class="skill-item"><div class="skill-dot"></div>TCP/IP <span class="skill-level">STRONG</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>DNS / DHCP <span class="skill-level">STRONG</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>Routing &amp; Switching <span class="skill-level">SOLID</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>VLANs <span class="skill-level">SOLID</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>OSI Model <span class="skill-level">SOLID</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>Network Security <span class="skill-level">SOLID</span></div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Cloud — Learning</div>
-      <div class="skill-item"><div class="skill-dot learning"></div>AWS Core Services <span class="skill-level">LEARNING</span></div>
-      <div class="skill-item"><div class="skill-dot learning"></div>EC2 / S3 / VPC <span class="skill-level">LEARNING</span></div>
-      <div class="skill-item"><div class="skill-dot learning"></div>IAM &amp; Security <span class="skill-level">LEARNING</span></div>
-      <div class="skill-item"><div class="skill-dot learning"></div>Azure Fundamentals <span class="skill-level">PLANNED</span></div>
-      <div class="skill-item"><div class="skill-dot learning"></div>Terraform / IaC <span class="skill-level">PLANNED</span></div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Operating Systems</div>
-      <div class="skill-item"><div class="skill-dot"></div>Linux (Ubuntu) <span class="skill-level">LEARNING</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>Windows Server <span class="skill-level">SOLID</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>Command Line / Bash <span class="skill-level">LEARNING</span></div>
-      <div class="skill-item"><div class="skill-dot learning"></div>Docker Basics <span class="skill-level">PLANNED</span></div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Tools &amp; Other</div>
-      <div class="skill-item"><div class="skill-dot"></div>Wireshark <span class="skill-level">SOLID</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>Cisco Packet Tracer <span class="skill-level">SOLID</span></div>
-      <div class="skill-item"><div class="skill-dot"></div>Git / GitHub <span class="skill-level">LEARNING</span></div>
-      <div class="skill-item"><div class="skill-dot learning"></div>VS Code <span class="skill-level">BASIC</span></div>
-    </div>
-  </div>
-  <p style="font-family: var(--mono); font-size: 11px; color: var(--dim); margin-top: 1.25rem;">
-    <span style="color: var(--accent);">●</span> Established &nbsp;&nbsp;
-    <span style="color: var(--amber);">●</span> Currently learning / Planned
-  </p>
-</section>
-
-<!-- Projects -->
-<section id="projects">
-  <div class="section-header">
-    <span class="section-label">03 / Projects</span>
-    <div class="section-line"></div>
-  </div>
-  <p class="section-sub">Hands-on work — growing as I learn. Check back as new projects are added.</p>
-  <div class="projects-grid">
-
-    <!-- Project 1 - placeholder -->
-    <div class="project-card coming-soon">
-      <div class="project-top">
-        <div class="project-icon">🏠</div>
-        <span class="project-status status-wip">IN PROGRESS</span>
-      </div>
-      <div class="project-title">Home Lab Setup</div>
-      <div class="project-desc">Setting up a local virtualisation lab using VirtualBox with multiple VMs — a Linux server, Windows Server, and a client machine — to practice networking and cloud concepts hands-on.</div>
-      <div class="project-tags">
-        <span class="project-tag">VirtualBox</span>
-        <span class="project-tag">Linux</span>
-        <span class="project-tag">Networking</span>
-        <span class="project-tag">Windows Server</span>
-      </div>
-      <div class="project-links">
-        <span style="font-size: 12px; color: var(--dim); font-family: var(--mono);">Coming soon — in progress</span>
+      <div class="hero-socials">
+        <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="s-btn wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/your_handle" target="_blank" class="s-btn ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/hasni-ahamed" target="_blank" class="s-btn li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:hasni@email.com" class="s-btn em" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/HASNIAHAMED" target="_blank" class="s-btn gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>
 
-    <!-- Project 2 - placeholder -->
-    <div class="project-card coming-soon">
-      <div class="project-top">
-        <div class="project-icon">☁️</div>
-        <span class="project-status status-soon">PLANNED</span>
-      </div>
-      <div class="project-title">AWS VPC Architecture</div>
-      <div class="project-desc">Building a custom AWS VPC with public and private subnets, internet gateway, NAT gateway, and security groups — applying networking fundamentals to the cloud.</div>
-      <div class="project-tags">
-        <span class="project-tag">AWS</span>
-        <span class="project-tag">VPC</span>
-        <span class="project-tag">Networking</span>
-        <span class="project-tag">Security Groups</span>
-      </div>
-      <div class="project-links">
-        <span style="font-size: 12px; color: var(--dim); font-family: var(--mono);">Planned after Cloud Practitioner</span>
-      </div>
-    </div>
-
-    <!-- Project 3 - placeholder -->
-    <div class="project-card coming-soon">
-      <div class="project-top">
-        <div class="project-icon">📡</div>
-        <span class="project-status status-soon">PLANNED</span>
-      </div>
-      <div class="project-title">Network Topology — Packet Tracer</div>
-      <div class="project-desc">Designing a complete enterprise network topology in Cisco Packet Tracer, including VLAN segmentation, inter-VLAN routing, OSPF, and ACLs for access control.</div>
-      <div class="project-tags">
-        <span class="project-tag">Cisco</span>
-        <span class="project-tag">Packet Tracer</span>
-        <span class="project-tag">OSPF</span>
-        <span class="project-tag">VLANs</span>
-      </div>
-      <div class="project-links">
-        <span style="font-size: 12px; color: var(--dim); font-family: var(--mono);">Documenting HND project work</span>
-      </div>
-    </div>
-
-    <!-- Add Project CTA -->
-    <div class="project-card" style="border-style: dashed; align-items: center; justify-content: center; text-align: center; min-height: 200px; cursor: default;">
-      <div style="font-size: 2rem; margin-bottom: 0.75rem; opacity: 0.4;">＋</div>
-      <div style="font-size: 14px; color: var(--dim);">More projects coming as I learn</div>
-      <div style="font-family: var(--mono); font-size: 11px; color: var(--dim); margin-top: 6px;">#100DaysOfCloud</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Roadmap -->
-<section id="roadmap">
-  <div class="section-header">
-    <span class="section-label">04 / Roadmap</span>
-    <div class="section-line"></div>
-  </div>
-  <p class="section-sub">My learning journey — transparent and in public</p>
-  <div class="roadmap">
-    <div class="roadmap-item">
-      <div class="roadmap-dot-wrap done">✓</div>
-      <div class="roadmap-content">
-        <div class="roadmap-title">Completed HND in Computer Networking</div>
-        <div class="roadmap-meta">COMPLETED · 2024 — Strong foundation in networking protocols, routing, switching, and security</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-dot-wrap active">→</div>
-      <div class="roadmap-content" style="border-color: rgba(99,179,237,0.3);">
-        <div class="roadmap-title" style="color: var(--accent);">Top-Up Degree (BSc) in Computer Networking — In Progress</div>
-        <div class="roadmap-meta">CURRENT · 2025–2026 — Advanced networking, cloud fundamentals, research project</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-dot-wrap active">→</div>
-      <div class="roadmap-content" style="border-color: rgba(99,179,237,0.3);">
-        <div class="roadmap-title" style="color: var(--accent);">AWS Cloud Practitioner Certification</div>
-        <div class="roadmap-meta">STUDYING NOW · Target: Q3 2025 — Core cloud concepts, AWS services, billing, security</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-dot-wrap">○</div>
-      <div class="roadmap-content">
-        <div class="roadmap-title">CompTIA Network+</div>
-        <div class="roadmap-meta">PLANNED · Q4 2025 — Vendor-neutral networking certification to complement AWS study</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-dot-wrap">○</div>
-      <div class="roadmap-content">
-        <div class="roadmap-title">AWS Solutions Architect Associate</div>
-        <div class="roadmap-meta">PLANNED · Q1 2026 — Design scalable, fault-tolerant AWS architectures</div>
-      </div>
-    </div>
-    <div class="roadmap-item">
-      <div class="roadmap-dot-wrap">○</div>
-      <div class="roadmap-content">
-        <div class="roadmap-title">First Cloud Engineer Role 🚀</div>
-        <div class="roadmap-meta">GOAL · 2026 — Cloud Engineer, Cloud Support Engineer, or Network Cloud Engineer</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Certifications -->
-<section>
-  <div class="section-header">
-    <span class="section-label">05 / Certifications</span>
-    <div class="section-line"></div>
-  </div>
-  <div class="certs-grid">
-    <div class="cert-card">
-      <div class="cert-logo">🎓</div>
-      <div class="cert-name">HND Computer Networking</div>
-      <div class="cert-date">COMPLETED · 2024</div>
-    </div>
-    <div class="cert-card upcoming">
-      <div class="cert-logo">☁️</div>
-      <div class="cert-name">AWS Cloud Practitioner</div>
-      <div class="cert-date">STUDYING NOW · 2025</div>
-    </div>
-    <div class="cert-card upcoming">
-      <div class="cert-logo">🌐</div>
-      <div class="cert-name">CompTIA Network+</div>
-      <div class="cert-date">PLANNED · 2025</div>
-    </div>
-    <div class="cert-card upcoming">
-      <div class="cert-logo">🏗️</div>
-      <div class="cert-name">AWS Solutions Architect</div>
-      <div class="cert-date">PLANNED · 2026</div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="section-header">
-    <span class="section-label">06 / Contact</span>
-    <div class="section-line"></div>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-text">
-      <h2>Let's connect</h2>
-      <p>I'm actively looking for cloud and networking opportunities, mentorship, and collaborations. Whether you're a recruiter, a fellow learner, or an engineer — I'd love to hear from you.</p>
-      <div class="contact-links">
-        <a href="https://linkedin.com/in/your-profile" class="contact-link" target="_blank">
-          <span class="contact-link-icon">💼</span>
-          <div>
-            <div class="contact-link-label">LinkedIn</div>
-            <div>linkedin.com/in/your-profile</div>
+    <!-- RIGHT PHOTO -->
+    <div class="hero-right">
+      <div class="photo-ring-wrap">
+        <div class="photo-inner">
+          <!-- TO ADD YOUR PHOTO: upload "profile.jpg" to images/ and uncomment below -->
+          <!-- <img src="images/profile.jpg" alt="Hasni Ahamed"> -->
+          <div class="photo-placeholder">
+            <i class="fas fa-user-astronaut"></i>
+            <span>Upload profile.jpg</span>
           </div>
-        </a>
-        <a href="https://github.com/your-username" class="contact-link" target="_blank">
-          <span class="contact-link-icon">🐙</span>
-          <div>
-            <div class="contact-link-label">GitHub</div>
-            <div>github.com/your-username</div>
-          </div>
-        </a>
-        <a href="mailto:your@email.com" class="contact-link">
-          <span class="contact-link-icon">✉️</span>
-          <div>
-            <div class="contact-link-label">Email</div>
-            <div>your@email.com</div>
-          </div>
-        </a>
+        </div>
+      </div>
+      <div class="photo-tag">
+        <div class="pname">Hasni Ahamed</div>
+        <div class="ptitle">Designer · Photographer · Engineer</div>
+        <div class="ploc"><i class="fas fa-map-marker-alt" style="color:var(--accent);margin-right:5px;"></i>Sri Lanka</div>
       </div>
     </div>
-    <div>
-      <div class="contact-form">
-        <div class="form-group">
-          <label class="form-label">Name</label>
-          <input type="text" class="form-input" placeholder="Your name">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-input" placeholder="Say hello, ask about my work, or discuss an opportunity..."></textarea>
-        </div>
-        <button class="btn btn-primary" style="align-self: flex-start;">Send message →</button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Footer -->
-<footer>
-  Built by <span>Your Name</span> · Aspiring Cloud Engineer · 
-  <span>#100DaysOfCloud</span> · 
-  Updated June 2025
-</footer>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ─── SERVICES ─── -->
+  <section class="sec" id="services">
+    <div class="sec-hd reveal">
+      <span class="sec-lbl">01 / Creative Services</span>
+      <div class="sec-line"></div>
+    </div>
+    <h2 class="sec-title reveal">What I <span class="hl">create</span></h2>
+    <p class="sec-sub reveal">From brand identities to cinematic edits — I bring ideas to life.</p>
+    <div class="srv-grid">
+      <div class="srv-card reveal">
+        <div class="ic"><i class="fas fa-paint-brush"></i></div>
+        <h3>Graphic Design</h3>
+        <p>Logos, social graphics, posters, and full brand identities that resonate with audiences.</p>
+      </div>
+      <div class="srv-card reveal" style="transition-delay:0.1s">
+        <div class="ic"><i class="fas fa-camera"></i></div>
+        <h3>Photography</h3>
+        <p>Portrait, product, event, and lifestyle — editorial and cinematic style photography.</p>
+      </div>
+      <div class="srv-card reveal" style="transition-delay:0.2s">
+        <div class="ic"><i class="fas fa-video"></i></div>
+        <h3>Video Editing</h3>
+        <p>Reels, promos, colour grading, and narrative editing for social media and web.</p>
+      </div>
+      <div class="srv-card reveal" style="transition-delay:0.3s">
+        <div class="ic"><i class="fas fa-cloud"></i></div>
+        <h3>Cloud Engineering</h3>
+        <p>AWS cloud architecture, networking solutions, and infrastructure design.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── TECH ─── -->
+  <section class="sec" id="tech">
+    <div class="sec-hd reveal">
+      <span class="sec-lbl">02 / Engineering &amp; Cloud</span>
+      <div class="sec-line"></div>
+    </div>
+    <h2 class="sec-title reveal">Technical <span class="hl">toolbox</span></h2>
+    <p class="sec-sub reveal">HND Computer Networking · Top-Up Degree · Cloud learner.</p>
+    <div class="tech-grid">
+      <div class="tech-card reveal">
+        <div class="ic"><i class="fas fa-network-wired"></i></div>
+        <h4>Networking</h4>
+        <div class="lv">TCP/IP · Routing · VLANs · Security</div>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.05s">
+        <div class="ic"><i class="fas fa-cloud"></i></div>
+        <h4>Cloud (AWS)</h4>
+        <div class="lv">EC2 · S3 · VPC · IAM · Studying</div>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.1s">
+        <div class="ic"><i class="fab fa-linux"></i></div>
+        <h4>Linux / Bash</h4>
+        <div class="lv">Ubuntu · Command Line · Scripting</div>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.15s">
+        <div class="ic"><i class="fas fa-tools"></i></div>
+        <h4>Network Tools</h4>
+        <div class="lv">Wireshark · Packet Tracer · Git</div>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.2s">
+        <div class="ic"><i class="fab fa-adobe"></i></div>
+        <h4>Adobe Suite</h4>
+        <div class="lv">Photoshop · Illustrator · Premiere</div>
+      </div>
+      <div class="tech-card reveal" style="transition-delay:0.25s">
+        <div class="ic"><i class="fas fa-pen-nib"></i></div>
+        <h4>Design Tools</h4>
+        <div class="lv">Figma · Canva · Lightroom</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── WORK ─── -->
+  <section class="sec" id="work">
+    <div class="sec-hd reveal">
+      <span class="sec-lbl">03 / Creative Portfolio</span>
+      <div class="sec-line"></div>
+    </div>
+    <h2 class="sec-title reveal">Selected <span class="hl">projects</span></h2>
+    <p class="sec-sub reveal">A glimpse into my creative universe — each project tells a story.</p>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal">
+        <div class="thumb" style="background:linear-gradient(135deg,#1a1200,#2e2000);">
+          <i class="fas fa-palette" style="font-size:50px;color:var(--accent);opacity:0.3;"></i>
+          <div class="ov"><span>View Project</span></div>
+        </div>
+        <div class="body">
+          <div class="cat"><i class="fas fa-tag"></i> Graphic Design</div>
+          <h3>Brand Identity Project</h3>
+          <p>Complete visual identity — logo, colour palette, typography, and brand guidelines.</p>
+          <div class="tags"><span>Logo</span><span>Branding</span><span>Typography</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" style="transition-delay:0.1s">
+        <div class="thumb" style="background:linear-gradient(135deg,#150e00,#281a00);">
+          <i class="fas fa-camera-retro" style="font-size:50px;color:var(--accent3);opacity:0.3;"></i>
+          <div class="ov"><span>View Project</span></div>
+        </div>
+        <div class="body">
+          <div class="cat"><i class="fas fa-tag"></i> Photography</div>
+          <h3>Portrait Photography</h3>
+          <p>Cinematic portrait photography with moody lighting and editorial styling.</p>
+          <div class="tags"><span>Portrait</span><span>Cinematic</span><span>Editorial</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" style="transition-delay:0.2s">
+        <div class="thumb" style="background:linear-gradient(135deg,#0f0c00,#201600);">
+          <i class="fas fa-film" style="font-size:50px;color:var(--accent2);opacity:0.3;"></i>
+          <div class="ov"><span>View Project</span></div>
+        </div>
+        <div class="body">
+          <div class="cat"><i class="fas fa-tag"></i> Video Editing</div>
+          <h3>Social Media Reel</h3>
+          <p>Dynamic video reel with transitions, colour grading, and custom soundtrack.</p>
+          <div class="tags"><span>Editing</span><span>Color Grade</span><span>Reels</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" style="transition-delay:0.3s">
+        <div class="thumb" style="background:linear-gradient(135deg,#120a00,#231400);">
+          <i class="fas fa-globe" style="font-size:50px;color:var(--accent);opacity:0.3;"></i>
+          <div class="ov"><span>View Project</span></div>
+        </div>
+        <div class="body">
+          <div class="cat"><i class="fas fa-tag"></i> Photography</div>
+          <h3>Landscape Photography</h3>
+          <p>Fine art landscape photography capturing Sri Lanka's natural beauty.</p>
+          <div class="tags"><span>Landscape</span><span>Nature</span><span>Fine Art</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" style="transition-delay:0.4s">
+        <div class="thumb" style="background:linear-gradient(135deg,#0d0800,#1c1100);">
+          <i class="fas fa-ad" style="font-size:50px;color:var(--accent3);opacity:0.3;"></i>
+          <div class="ov"><span>View Project</span></div>
+        </div>
+        <div class="body">
+          <div class="cat"><i class="fas fa-tag"></i> Graphic Design</div>
+          <h3>Social Media Campaign</h3>
+          <p>Full suite of social assets — carousels, stories, and animated posts.</p>
+          <div class="tags"><span>Social Media</span><span>Design</span><span>Animation</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" style="transition-delay:0.5s">
+        <div class="thumb" style="background:linear-gradient(135deg,#0a0600,#180e00);">
+          <i class="fas fa-network-wired" style="font-size:50px;color:var(--accent2);opacity:0.3;"></i>
+          <div class="ov"><span>View Project</span></div>
+        </div>
+        <div class="body">
+          <div class="cat"><i class="fas fa-tag"></i> Engineering</div>
+          <h3>Network Topology Design</h3>
+          <p>Enterprise network with VLANs, OSPF routing, and ACL security configuration.</p>
+          <div class="tags"><span>Networking</span><span>Cisco</span><span>VLAN</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Image upload helper -->
+    <div style="margin-top:2rem;background:rgba(251,191,36,0.05);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;">
+      <i class="fas fa-lightbulb" style="color:var(--accent);font-size:1.2rem;flex-shrink:0;margin-top:3px;"></i>
+      <div>
+        <div style="font-size:13px;font-weight:500;color:var(--accent);margin-bottom:4px;">How to add your real project images</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.8;">Upload images to GitHub in a folder called <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;font-family:monospace;color:var(--text);">images/</code> named <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;font-family:monospace;color:var(--text);">project1.jpg</code>, <code style="background:var(--bg3);padding:2px 6px;border-radius:3px;font-family:monospace;color:var(--text);">project2.jpg</code>, etc. Then uncomment the img tags inside each project card.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="sec" id="about">
+    <div class="sec-hd reveal">
+      <span class="sec-lbl">04 / About Me</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2 class="sec-title" style="font-size:1.8rem;margin-bottom:1rem;">Creative mind, <span class="hl">engineering heart</span></h2>
+        <p>I'm <strong>Hasni Ahamed</strong> — a multidisciplinary creative and <strong>Computer Networking graduate</strong> based in Sri Lanka. I combine a strong foundation in <span class="hl">networking and cloud computing</span> with a deep passion for visual storytelling.</p>
+        <p>My journey started with an <strong>HND in Computer Networking</strong>, and I'm now pursuing a Top-Up degree while studying for AWS certifications. I also work as a freelance <strong>graphic designer</strong>, <strong>photographer</strong>, and <strong>video editor</strong>.</p>
+        <p>I believe creativity and technology are two sides of the same coin — my goal is to master both as a <strong>Cloud Engineer</strong> by 2026.</p>
+        <div style="margin-top:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;">
+          <div><span style="font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:0.08em;">EDUCATION</span><br /><strong>HND · Top-Up BSc</strong></div>
+          <div><span style="font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:0.08em;">STUDYING</span><br /><strong>AWS · Network+</strong></div>
+          <div><span style="font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:0.08em;">GOAL</span><br /><strong>Cloud Engineer · 2026</strong></div>
+        </div>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat-card"><div class="num">HND</div><div class="lbl">Computer Networking</div></div>
+        <div class="stat-card"><div class="num">AWS</div><div class="lbl">Studying Now</div></div>
+        <div class="stat-card"><div class="num">3+</div><div class="lbl">Years Creative Work</div></div>
+        <div class="stat-card"><div class="num">🚀</div><div class="lbl">Cloud Engineer 2026</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── ROADMAP ─── -->
+  <section class="sec" id="roadmap">
+    <div class="sec-hd reveal">
+      <span class="sec-lbl">05 / Roadmap</span>
+      <div class="sec-line"></div>
+    </div>
+    <h2 class="sec-title reveal">My <span class="hl">journey</span></h2>
+    <p class="sec-sub reveal">Transparent progress — creative and technical.</p>
+    <div class="roadmap">
+      <div class="rm-item">
+        <div class="rm-dot done">✓</div>
+        <div class="rm-box">
+          <div class="rm-title">HND Computer Networking — Completed</div>
+          <div class="rm-meta">COMPLETED · 2024 — Networking protocols, routing, switching, security</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot now">→</div>
+        <div class="rm-box" style="border-color:rgba(251,191,36,0.3);">
+          <div class="rm-title" style="color:var(--accent);">Top-Up Degree (BSc) — Computer Networking</div>
+          <div class="rm-meta">CURRENT · 2025–2026 — Advanced networking, cloud, research</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot now">→</div>
+        <div class="rm-box" style="border-color:rgba(251,191,36,0.3);">
+          <div class="rm-title" style="color:var(--accent);">AWS Cloud Practitioner Certification</div>
+          <div class="rm-meta">STUDYING NOW · Target Q3 2025 — Core cloud concepts and services</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot">○</div>
+        <div class="rm-box">
+          <div class="rm-title">CompTIA Network+</div>
+          <div class="rm-meta">PLANNED · Q4 2025 — Vendor-neutral networking certification</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot">○</div>
+        <div class="rm-box">
+          <div class="rm-title">AWS Solutions Architect Associate</div>
+          <div class="rm-meta">PLANNED · Q1 2026 — Scalable AWS architectures</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot">○</div>
+        <div class="rm-box">
+          <div class="rm-title">First Cloud Engineer Role 🚀</div>
+          <div class="rm-meta">GOAL · 2026 — Cloud Engineer / Cloud Support Engineer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="sec" id="contact">
+    <div class="sec-hd reveal">
+      <span class="sec-lbl">06 / Contact</span>
+      <div class="sec-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-text reveal">
+        <h2>Let's <span class="hl">connect</span></h2>
+        <p>Available for graphic design, photography, video editing, and cloud engineering work. Based in Sri Lanka — working worldwide.</p>
+        <div class="clinks">
+          <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="clink wa">
+            <div class="ic"><i class="fab fa-whatsapp"></i></div>
+            <div><div class="lbl">WhatsApp</div><div class="val">+94 XX XXX XXXX</div></div>
+            <i class="fas fa-arrow-right arr"></i>
+          </a>
+          <a href="https://instagram.com/your_handle" target="_blank" class="clink ig">
+            <div class="ic"><i class="fab fa-instagram"></i></div>
+            <div><div class="lbl">Instagram</div><div class="val">@your_handle</div></div>
+            <i class="fas fa-arrow-right arr"></i>
+          </a>
+          <a href="https://linkedin.com/in/hasni-ahamed" target="_blank" class="clink li">
+            <div class="ic"><i class="fab fa-linkedin-in"></i></div>
+            <div><div class="lbl">LinkedIn</div><div class="val">Hasni Ahamed</div></div>
+            <i class="fas fa-arrow-right arr"></i>
+          </a>
+          <a href="mailto:hasni@email.com" class="clink">
+            <div class="ic"><i class="fas fa-envelope"></i></div>
+            <div><div class="lbl">Email</div><div class="val">hasni@email.com</div></div>
+            <i class="fas fa-arrow-right arr"></i>
+          </a>
+        </div>
+        <div class="sbar">
+          <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/your_handle" target="_blank" class="ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/in/hasni-ahamed" target="_blank" class="li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:hasni@email.com" class="em" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/HASNIAHAMED" target="_blank" class="gh" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="cform" id="contactForm">
+          <div class="fg">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="fg">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+          <div class="fg">
+            <label for="msg">Message</label>
+            <textarea id="msg" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+            <i class="fas fa-paper-plane"></i> Send message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    Crafted with <span class="heart">♥</span> by <span class="fg-txt">Hasni Ahamed</span> ·
+    <span class="fg-txt">Designer · Photographer · Cloud Engineer</span> ·
+    <span class="fg-txt">✦ Sri Lanka 2025</span>
+  </footer>
+
+  <!-- ─── JAVASCRIPT ─── -->
+  <script>
+    (function() {
+      'use strict';
+
+      // Hamburger
+      const hb = document.getElementById('hamburger');
+      const nl = document.getElementById('navLinks');
+
+      hb.addEventListener('click', function() {
+        hb.classList.toggle('active');
+        nl.classList.toggle('open');
+      });
+
+      nl.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          hb.classList.remove('active');
+          nl.classList.remove('open');
+        });
+      });
+
+      // Scroll reveal
+      const obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        obs.observe(el);
+      });
+
+      // Contact form
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const btn = form.querySelector('.btn');
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          btn.disabled = true;
+          setTimeout(function() {
+            btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+            btn.style.background = '#34d399';
+            btn.style.color = '#000';
+            setTimeout(function() {
+              btn.innerHTML = originalText;
+              btn.disabled = false;
+              btn.style.background = '';
+              btn.style.color = '';
+              form.reset();
+            }, 2500);
+          }, 1800);
+        });
+      }
+
+      // Nav highlight
+      const secs = document.querySelectorAll('section[id]');
+      const ancs = nl.querySelectorAll('a');
+
+      function upNav() {
+        let current = '';
+        secs.forEach(function(s) {
+          if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+        });
+        ancs.forEach(function(a) {
+          a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : 'var(--muted)';
+        });
+      }
+
+      window.addEventListener('scroll', upNav);
+      upNav();
+
+      // Escape key closes menu
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && nl.classList.contains('open')) {
+          hb.classList.remove('active');
+          nl.classList.remove('open');
+        }
+      });
+
+    })();
+  </script>
 
 </body>
 </html>
