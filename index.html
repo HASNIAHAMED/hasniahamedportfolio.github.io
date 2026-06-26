@@ -1995,27 +1995,26 @@
         
         </div>
       </div>
-      <div class="reveal">
-        <form class="cform" id="contactForm">
-          <div class="fg">
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your name" required />
-          </div>
-          <div class="fg">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="your@email.com" required />
-          </div>
-          <div class="fg">
-            <label for="msg">Message</label>
-            <textarea id="msg" placeholder="Tell me about your project or opportunity..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
-            <i class="fas fa-paper-plane"></i> Send message
-          </button>
-          <form class="cform" id="contactForm" action="https://formspree.io/f/mojodaol" method="POST">
-        </form>
-      </div>
+     <div class="reveal">
+  <form class="cform" id="contactForm" action="https://formspree.io/f/mojodaol" method="POST">
+    <div class="fg">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required />
     </div>
+    <div class="fg">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required />
+    </div>
+    <div class="fg">
+      <label for="msg">Message</label>
+      <textarea id="msg" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
+      <i class="fas fa-paper-plane"></i> Send message
+    </button>
+  </form>
+</div>
+   
   </section>
 
   <!-- ─── MODAL ─── -->
@@ -2070,6 +2069,26 @@
       });
 
       // ─── CONTACT FORM ───
+      // ─── CONTACT FORM (Formspree) ───
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    // DO NOT use e.preventDefault() – let the form submit naturally
+    const btn = form.querySelector('.btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+    
+    // The form will submit to Formspree automatically
+    // After submission, the page will redirect to Formspree's thank-you page
+    
+    // Restore button after 5 seconds (in case of slow network)
+    setTimeout(function() {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }, 5000);
+  });
+}
 
           setTimeout(function() {
             btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
