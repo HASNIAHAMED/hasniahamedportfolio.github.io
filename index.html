@@ -2012,6 +2012,7 @@
           <button type="submit" class="btn btn-primary" style="align-self:flex-start;">
             <i class="fas fa-paper-plane"></i> Send message
           </button>
+          <form class="cform" id="contactForm" action="https://formspree.io/f/mojodaol" method="POST">
         </form>
       </div>
     </div>
@@ -2069,14 +2070,7 @@
       });
 
       // ─── CONTACT FORM ───
-      const form = document.getElementById('contactForm');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const btn = form.querySelector('.btn');
-          const originalText = btn.innerHTML;
-          btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-          btn.disabled = true;
+
           setTimeout(function() {
             btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
             btn.style.background = '#34d399';
@@ -2089,8 +2083,7 @@
               form.reset();
             }, 2500);
           }, 1800);
-        });
-      }
+      
 
       // ─── NAV HIGHLIGHT ───
       const secs = document.querySelectorAll('section[id]');
