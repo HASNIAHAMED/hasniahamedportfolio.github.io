@@ -646,20 +646,30 @@
         }
 
         .photo-tag .pname {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text);
+              font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.15));
         }
 
         .photo-tag .ptitle {
-            font-family: var(--mono);
-            font-size: 15px;
-            background: #ebebfa;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 0.14em;
-            margin-top: 5px;
+             display: inline-block;           /* Makes the background wrap tightly */
+    padding: 8px 24px;              /* Adds breathing room */
+    font-family: var(--mono);
+    font-size: 14px;                /* ← Bigger */
+    font-weight: 700;               /* ← Bold */
+    color: #ffffff;                 /* ← White text (cleaner for glass) */
+    letter-spacing: 0.14em;
+    margin-top: 8px;
+    border-radius: 40px;            /* Pill shape */
+    
+    /* ✨ Glassmorphism Magic ✨ */
+    background: rgba(20, 16, 34, 0.35);        /* Semi-transparent dark */
+    backdrop-filter: blur(12px);               /* The frosty glass blur */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle glass border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);   /* Floating glass shadow */
         }
 
         .photo-tag .ploc {
